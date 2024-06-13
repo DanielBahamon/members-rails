@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Netvvrk Members Database</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+  <body>
+    <%= render "layouts/navbar" %>
+    <div class="mx-auto max-w-7xl p-4  sm:px-6 lg:p-8">
+      <% flash.each do |key, value| %>
+        <div class="py-2 mb-4 text-md border-b w-fit <%= key == "notice" ? "border-slate-200 text-slate-600" : "text-red-500 border-red-200" %>">
+          <%= value %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+    <% if is_production? %>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-CD1ZMCYVTF"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CD1ZMCYVTF');
+      </script>
+    <% end %>
+  </body>
+</html>

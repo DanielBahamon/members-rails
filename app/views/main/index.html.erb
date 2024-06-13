@@ -1,0 +1,22 @@
+<%= render "header" %>
+<div class="flex justify-center">
+  <% if@artworks.length == 0 and @has_filters %>
+    <div class="flex flex-col items-center pt-4">
+      <div class="mb-4">No artworks matches your criteria.</div>
+      <%= link_to root_path, class: "tw-btn-primary" do %>
+        Clear all filters
+      <% end %>
+    </div>
+  <% end %>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 ">
+    <% @artworks.each_with_index do |artwork| %>
+      <div class="grid gap-4 content-baseline">
+        <%= render "main/artwork", artwork: artwork %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+<div class="flex w-full justify-center">
+  <%= paginate @artworks %>
+</div>

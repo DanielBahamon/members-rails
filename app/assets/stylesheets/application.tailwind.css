@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  a {
+    @apply text-slate-600 hover:underline hover:text-slate-500 no-underline
+  }
+
+  .tw-btn-primary {
+    @apply px-2 py-1 border text-slate-700 bg-slate-200 hover:text-black hover:border-black 
+       border-slate-700 rounded-md text-nowrap no-underline w-min hover:no-underline;
+  }
+
+  .tw-btn-secondary {
+    @apply px-2 py-1 border text-black hover:text-slate-600 hover:border-slate-400 
+       border-black rounded-md text-nowrap no-underline w-min hover:no-underline;
+  }
+
+  .tw-btn-danger {
+    @apply px-2 py-1 border text-red-800 hover:text-red-600 border-red-800 
+        hover:border-red-400 rounded-md text-nowrap no-underline w-min hover:no-underline;
+  }
+
+  .small-field {
+    @apply block rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 sm:text-sm
+  }
+
+  .tw-page-link {
+    @apply flex items-center justify-center text-nowrap px-3 md:px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white
+  }
+
+  .tw-page-current {
+    @apply z-10 flex items-center justify-center text-nowrap px-3 md:px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white
+  }
+}
+
+

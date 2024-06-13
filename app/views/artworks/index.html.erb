@@ -1,0 +1,23 @@
+  
+<h4>Add up to 10 Artworks</h4>
+<% if current_user.more_artworks_allowed? %>
+  <%= link_to "Add new artwork", new_artwork_path, class: "tw-btn-secondary inline-block my-3" %>
+<% end %>
+<table class="table">
+  <thead  class="text-sm">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Medium</th>
+      <th class="hidden sm:table-cell">Description</th>
+      <th>Visible to curators?</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody id="artworks">
+    <% @artworks.each do |artwork| %>
+      <%= render artwork %>
+    <% end %>
+  </table>
+</div>
